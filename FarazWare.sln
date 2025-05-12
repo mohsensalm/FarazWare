@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarazWare.Application", "FarazWare.Application\FarazWare.Application.csproj", "{D6F84AC1-5A57-4594-9B5B-2EDA0DA3A447}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarazWare.Infrastructure", "FarazWare.Infrastructure\FarazWare.Infrastructure.csproj", "{6AD28F7A-F751-4AE2-B5A2-C4E5BD992A51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarazWare.Domain", "FarazWare.Domain\FarazWare.Domain.csproj", "{D668FE2B-450E-463D-BB42-395897DC93A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarazWare.Persistence", "FarazWare.Persistence\FarazWare.Persistence.csproj", "{8069475F-76CB-467A-BB5C-8B51DB20D493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FarazWare.Api", "FarazWare.Api\FarazWare.Api.csproj", "{F2D7BA7A-F68E-47CA-9BB3-F440D37DC2EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6F84AC1-5A57-4594-9B5B-2EDA0DA3A447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F84AC1-5A57-4594-9B5B-2EDA0DA3A447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F84AC1-5A57-4594-9B5B-2EDA0DA3A447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F84AC1-5A57-4594-9B5B-2EDA0DA3A447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AD28F7A-F751-4AE2-B5A2-C4E5BD992A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AD28F7A-F751-4AE2-B5A2-C4E5BD992A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AD28F7A-F751-4AE2-B5A2-C4E5BD992A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AD28F7A-F751-4AE2-B5A2-C4E5BD992A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D668FE2B-450E-463D-BB42-395897DC93A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D668FE2B-450E-463D-BB42-395897DC93A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D668FE2B-450E-463D-BB42-395897DC93A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D668FE2B-450E-463D-BB42-395897DC93A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8069475F-76CB-467A-BB5C-8B51DB20D493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8069475F-76CB-467A-BB5C-8B51DB20D493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8069475F-76CB-467A-BB5C-8B51DB20D493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8069475F-76CB-467A-BB5C-8B51DB20D493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D7BA7A-F68E-47CA-9BB3-F440D37DC2EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D7BA7A-F68E-47CA-9BB3-F440D37DC2EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D7BA7A-F68E-47CA-9BB3-F440D37DC2EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D7BA7A-F68E-47CA-9BB3-F440D37DC2EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6F84AC1-5A57-4594-9B5B-2EDA0DA3A447} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{6AD28F7A-F751-4AE2-B5A2-C4E5BD992A51} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{D668FE2B-450E-463D-BB42-395897DC93A4} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8069475F-76CB-467A-BB5C-8B51DB20D493} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D3177EE-3A34-4A82-AC77-EE06B5D4E97C}
+	EndGlobalSection
+EndGlobal
