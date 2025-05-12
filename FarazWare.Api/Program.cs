@@ -23,7 +23,6 @@ namespace FarazWare.Api
 
             // ثبت سرویس‌ها
             builder.Services.AddControllers();
-            builder.Services.AddOpenApi();
             builder.Services.AddSingleton<IEncryptionService, RsaEncryptionService>();
             builder.Services.AddHttpClient<IAuthClient, AuthClient>();
             builder.Services.AddHttpClient<ICardClient, CardClient>();
@@ -35,7 +34,6 @@ namespace FarazWare.Api
             // پیکربندی Middlewareها
             if (app.Environment.IsDevelopment())
             {
-                app.MapOpenApi();
             }
 
             app.UseHttpsRedirection();
