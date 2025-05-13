@@ -29,9 +29,13 @@ public class OAuthClient
         req.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
         var res = await _http.SendAsync(req);
-        res.EnsureSuccessStatusCode();
-        var payload = await res.Content.ReadAsStringAsync();
-        return JsonSerializer.Deserialize<TokenResponse>(payload);
+        var result = res.EnsureSuccessStatusCode();
+        if ( result is not null && result.IsSuccessStatusCode)
+        {
+            var payload = await result.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<TokenResponse>(payload);
+        }
+        throw new Exception("bad respon");  
     }
 
 }

@@ -1,10 +1,11 @@
-﻿
-using FarazWare.Application.Contracts.Services;
+﻿using FarazWare.Application.Contracts.Services;
 using FarazWare.Application.UseCases;
 using FarazWare.Infrastructure.Clients;
 using FarazWare.Infrastructure.Configuration;
 using FarazWare.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.BearerToken;
+using Microsoft.AspNetCore.Authentication.JwtBearer; // Uncomment this if using JWT
+using Microsoft.AspNetCore.Builder;
 
 namespace FarazWare.Api
 {
@@ -30,37 +31,44 @@ namespace FarazWare.Api
             builder.Services.AddTransient<AcquireTokenUseCase>();
             builder.Services.AddTransient<GetCardsUseCase>();
             builder.Services.AddHttpClient<OAuthClient>();
-
-            //builder.Services.AddHttpClient<FakeBankApiClient>();
-
-            //builder.Services.AddScoped<IClientCredentialsService, ClientCredentialsService>();
-            //builder.Services.AddScoped<IAuthorizationCodeService, AuthorizationCodeService>();
-            //builder.Services.AddScoped<IRevokeService, RevokeService>();
-            //builder.Services.AddScoped<IRefreshService, RefreshService>();
-            //builder.Services.AddScoped<ILoginService, LoginService>();
+            builder.Services.AddScoped<IClientCredentialsService, ClientCredentialsService>();
 
 
             builder.Services.AddDistributedMemoryCache();
             builder.Services.AddSession();
 
+            // Uncomment to use JWT Bearer Authentication
+            /*
+            builder.Services.AddAuthentication(options => {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(options => {
+                options.Authority = builder.Configuration["OAuth:Authority"];
+                options.Audience = builder.Configuration["OAuth:ClientId"];
+                options.RequireHttpsMetadata = true;
+            });
+            */
 
-            //builder.Services.AddAuthentication(options => {
-            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //}).AddJwtBearer(options => {
-            //    options.Authority = builder.Configuration["OAuth:Authority"];
-            //    options.Audience = builder.Configuration["OAuth:ClientId"];
-            //    options.RequireHttpsMetadata = true;
-            //});
+            // Add Swagger services
+            builder.Services.AddEndpointsApiExplorer();
+            builder.Services.AddOpenApiDocument();
 
             var app = builder.Build();
 
-            // پیکربندی Middlewareها
+            app.UseOpenApi(); // Serve OpenAPI/Swagger documents
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
             if (app.Environment.IsDevelopment())
             {
+                app.UseDeveloperExceptionPage();
+                app.UseSwaggerUi(); // Serve Swagger UI
             }
 
+            app.MapGet("/",()=>Results.Redirect("/swagger"));
+
             app.UseHttpsRedirection();
+            // Uncomment if using JWT Bearer Authentication
+            // app.UseAuthentication();
             app.UseAuthorization();
             app.MapControllers();
             app.Run();
