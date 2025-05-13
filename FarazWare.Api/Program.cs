@@ -4,6 +4,7 @@ using FarazWare.Infrastructure.Clients;
 using FarazWare.Infrastructure.Configuration;
 using FarazWare.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.BearerToken;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FarazWare.Api
 {
@@ -28,6 +29,29 @@ namespace FarazWare.Api
             builder.Services.AddHttpClient<ICardClient, CardClient>();
             builder.Services.AddTransient<AcquireTokenUseCase>();
             builder.Services.AddTransient<GetCardsUseCase>();
+            builder.Services.AddHttpClient<OAuthClient>();
+
+            //builder.Services.AddHttpClient<FakeBankApiClient>();
+
+            //builder.Services.AddScoped<IClientCredentialsService, ClientCredentialsService>();
+            //builder.Services.AddScoped<IAuthorizationCodeService, AuthorizationCodeService>();
+            //builder.Services.AddScoped<IRevokeService, RevokeService>();
+            //builder.Services.AddScoped<IRefreshService, RefreshService>();
+            //builder.Services.AddScoped<ILoginService, LoginService>();
+
+
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession();
+
+
+            //builder.Services.AddAuthentication(options => {
+            //    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            //    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            //}).AddJwtBearer(options => {
+            //    options.Authority = builder.Configuration["OAuth:Authority"];
+            //    options.Audience = builder.Configuration["OAuth:ClientId"];
+            //    options.RequireHttpsMetadata = true;
+            //});
 
             var app = builder.Build();
 

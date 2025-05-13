@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FarazWare.Application\FarazWare.Application.csproj" />
     <ProjectReference Include="..\FarazWare.Infrastructure\FarazWare.Infrastructure.csproj" />
   </ItemGroup>

@@ -20,7 +20,7 @@ namespace FarazWare.Infrastructure.Services
             var pem = File.ReadAllText(publicKeyPath);
 
             _rsa = RSA.Create();
-            _rsa.ImportFromPem(pem.ToCharArray()); // درست‌ترین روش خواندن PEM
+            _rsa.ImportFromPem(pem.ToCharArray()); 
         }
 
         public string Encrypt(string plainText)
