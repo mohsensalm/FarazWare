@@ -1,4 +1,4 @@
-﻿using FarazWare.Infrastructure.Clients;
+﻿using FarazWare.Application.Contracts.Services;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]

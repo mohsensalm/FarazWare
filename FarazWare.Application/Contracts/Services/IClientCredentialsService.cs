@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FarazWare.Domain.Entities;
 
-namespace FarazWare.Infrastructure.Clients
+namespace FarazWare.Application.Contracts.Services
 {
     public interface IClientCredentialsService
     {

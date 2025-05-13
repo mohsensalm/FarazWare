@@ -1,10 +1,10 @@
 ﻿
+using FarazWare.Application.Contracts.Services;
 using FarazWare.Application.UseCases;
 using FarazWare.Infrastructure.Clients;
 using FarazWare.Infrastructure.Configuration;
 using FarazWare.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.BearerToken;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace FarazWare.Api
 {

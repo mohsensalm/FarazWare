@@ -7,7 +7,7 @@ using DotNetOpenAuth.AspNet.Clients;
 using FarazWare.Domain.Entities;
 using Microsoft.Extensions.Configuration;
 
-namespace FarazWare.Infrastructure.Clients
+namespace FarazWare.Application.Contracts.Services
 {
     public class ClientCredentialsService : IClientCredentialsService
     {

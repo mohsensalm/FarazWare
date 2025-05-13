@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FarazWare.Infrastructure.Clients
+namespace FarazWare.Application.Contracts.Services
 {
     public interface IAuthClient
     {

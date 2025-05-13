@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FarazWare.Infrastructure\FarazWare.Infrastructure.csproj" />
+    <ProjectReference Include="..\FarazWare.Domain\FarazWare.Domain.csproj" />
   </ItemGroup>
 
 </Project>

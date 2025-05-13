@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
+using FarazWare.Application.Contracts.Services;
 using Microsoft.Extensions.Configuration;
 
 namespace FarazWare.Infrastructure.Clients
